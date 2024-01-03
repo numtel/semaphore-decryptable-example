@@ -1,9 +1,27 @@
+import React, { useState } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
+import { generateProof, genKeypair } from "/home/ben/semaphore/packages/proof/dist/index.browser.mjs";
+
+import semaphoreABI from '../abi/semaphoreABI.json';
+import CreateGroup from '../components/CreateGroup';
+import AddMember from '../components/AddMember';
+import VerifyProof from '../components/VerifyProof';
+import Keypair from '../components/Keypair';
+
 const Home: NextPage = () => {
+  const contract = {
+    address: '0xe2373e512ef8d693490010ea9dbc35b7b75edd38',
+    chain: 17000,
+    abi: semaphoreABI,
+  };
+  const [groupId, setGroupId] = useState(1);
+  const [idSeed, setIdSeed] = useState(null);
+  const [keypair, setKeypair] = useState(null);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +38,7 @@ const Home: NextPage = () => {
 
         <h1 className={styles.title}>
           Welcome to <a href="">RainbowKit</a> + <a href="">wagmi</a> +{' '}
-          <a href="https://nextjs.org">Next.js!</a>
+          <a href="https://nextjs.org">Next.js</a> + <a href="https://github.com/numtel/semaphore-decryptable">Semaphore Decryptable</a>
         </h1>
 
         <p className={styles.description}>
@@ -29,6 +47,22 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
+          <div className={styles.card}>
+            <h2>1. Create Group</h2>
+            <CreateGroup {...{contract, groupId, setGroupId}} />
+          </div>
+          <div className={styles.card}>
+            <h2>2. Add Member</h2>
+            <AddMember {...{contract, groupId, setIdSeed, idSeed}} />
+          </div>
+          <div className={styles.card}>
+            <h2>3. Generate Keypair</h2>
+            <Keypair {...{keypair, setKeypair, genKeypair}} />
+          </div>
+          <div className={styles.card}>
+            <h2>4. Verify Proof</h2>
+            <VerifyProof {...{contract, groupId, idSeed, keypair, generateProof}} />
+          </div>
           <a className={styles.card} href="https://rainbowkit.com">
             <h2>RainbowKit Documentation &rarr;</h2>
             <p>Learn how to customize your wallet connection flow.</p>

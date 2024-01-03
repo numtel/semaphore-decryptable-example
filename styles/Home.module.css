@@ -94,6 +94,16 @@
   line-height: 1.5;
 }
 
+.card label span {
+  display:block;
+}
+
+.card button {
+  display:block;
+  margin: 5px auto;
+  padding: 5px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
