@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAccount, useWalletClient } from 'wagmi';
-import { Identity } from "@semaphore-protocol/identity";
+import { Identity } from "zk-group-decryptable";
 
 import Transaction from './Transaction';
 

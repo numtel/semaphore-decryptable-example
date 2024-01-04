@@ -10,9 +10,7 @@
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^1.3.2",
-    "@semaphore-protocol/group": "/home/ben/semaphore/packages/group",
-    "@semaphore-protocol/identity": "/home/ben/semaphore/packages/identity",
-    "@semaphore-protocol/proof": "/home/ben/semaphore/packages/proof",
+    "zk-group-decryptable": "numtel/zk-group-decryptable",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

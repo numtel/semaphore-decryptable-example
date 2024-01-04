@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { usePublicClient } from 'wagmi';
-import { Identity } from "@semaphore-protocol/identity";
-import { Group } from "@semaphore-protocol/group";
+import { Identity, Group, generateProof } from "zk-group-decryptable";
 
 import Transaction from "./Transaction";
 
-export default function VerifyProof({
-  contract,
-  idSeed,
-  groupId,
-  keypair,
-  generateProof,
-}) {
+export default function VerifyProof({contract, idSeed, groupId, keypair}) {
   const [loading, setLoading] = useState(false);
   const [proof, setProof] = useState(null);
   const publicClient = usePublicClient({ chainId: contract.chain });

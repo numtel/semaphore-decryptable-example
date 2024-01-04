@@ -4,8 +4,6 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-import { generateProof, genKeypair } from "/home/ben/semaphore/packages/proof/dist/index.browser.mjs";
-
 import semaphoreABI from '../abi/semaphoreABI.json';
 import CreateGroup from '../components/CreateGroup';
 import AddMember from '../components/AddMember';
@@ -14,7 +12,7 @@ import Keypair from '../components/Keypair';
 
 const Home: NextPage = () => {
   const contract = {
-    address: '0xe2373e512ef8d693490010ea9dbc35b7b75edd38',
+    address: '0xbe5aaa6da0445d4a9989702e0fb8b590039112f1',
     chain: 17000,
     abi: semaphoreABI,
   };
@@ -38,7 +36,7 @@ const Home: NextPage = () => {
 
         <h1 className={styles.title}>
           Welcome to <a href="">RainbowKit</a> + <a href="">wagmi</a> +{' '}
-          <a href="https://nextjs.org">Next.js</a> + <a href="https://github.com/numtel/semaphore-decryptable">Semaphore Decryptable</a>
+          <a href="https://nextjs.org">Next.js</a> + <a href="https://github.com/numtel/zk-group-decryptable">Semaphore Decryptable</a>
         </h1>
 
         <p className={styles.description}>
@@ -57,11 +55,11 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.card}>
             <h2>3. Generate Keypair</h2>
-            <Keypair {...{keypair, setKeypair, genKeypair}} />
+            <Keypair {...{keypair, setKeypair}} />
           </div>
           <div className={styles.card}>
             <h2>4. Verify Proof</h2>
-            <VerifyProof {...{contract, groupId, idSeed, keypair, generateProof}} />
+            <VerifyProof {...{contract, groupId, idSeed, keypair}} />
           </div>
           <a className={styles.card} href="https://rainbowkit.com">
             <h2>RainbowKit Documentation &rarr;</h2>
