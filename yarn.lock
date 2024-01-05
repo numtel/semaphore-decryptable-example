@@ -4804,9 +4804,9 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zk-group-decryptable@numtel/zk-group-decryptable:
+zk-group-decryptable@numtel/zk-group-decryptable#8aa1e0293079589b10442e19fad2f29f8ce5c553:
   version "0.0.1"
-  resolved "https://codeload.github.com/numtel/zk-group-decryptable/tar.gz/63d8aaca4cf5a95bd1cdda564dff91377e43e247"
+  resolved "https://codeload.github.com/numtel/zk-group-decryptable/tar.gz/8aa1e0293079589b10442e19fad2f29f8ce5c553"
   dependencies:
     "@ethersproject/bignumber" "^5.7.0"
     "@ethersproject/bytes" "^5.7.0"
