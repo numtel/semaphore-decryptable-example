@@ -10,12 +10,13 @@ import AddMember from '../components/AddMember';
 import VerifyProof from '../components/VerifyProof';
 import Keypair from '../components/Keypair';
 
+const contract = {
+  address: '0xbe5aaa6da0445d4a9989702e0fb8b590039112f1',
+  chain: 17000,
+  abi: semaphoreABI,
+};
+
 const Home: NextPage = () => {
-  const contract = {
-    address: '0xbe5aaa6da0445d4a9989702e0fb8b590039112f1',
-    chain: 17000,
-    abi: semaphoreABI,
-  };
   const [groupId, setGroupId] = useState(1);
   const [idSeed, setIdSeed] = useState(null);
   const [keypair, setKeypair] = useState(null);

@@ -4,11 +4,7 @@ import Transaction from './Transaction';
 
 const ONE_HOUR = 60 * 60;
 
-export default function CreateGroup({
-  contract,
-  groupId,
-  setGroupId,
-}) {
+export default function CreateGroup({contract, groupId, setGroupId}) {
   const { address: account } = useAccount();
 
   return (<div>

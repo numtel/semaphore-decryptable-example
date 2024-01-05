@@ -4,12 +4,7 @@ import { Identity } from "zk-group-decryptable";
 
 import Transaction from './Transaction';
 
-export default function CreateGroup({
-  contract,
-  groupId,
-  idSeed,
-  setIdSeed,
-}) {
+export default function AddMember({contract, groupId, idSeed, setIdSeed}) {
   const { address: account } = useAccount();
   const walletClient = useWalletClient({ chainId: contract.chain });
   const [loading, setLoading] = useState(false);

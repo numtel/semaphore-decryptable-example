@@ -1,9 +1,6 @@
 import { useAccount, useNetwork, useSwitchNetwork, useContractWrite, useWaitForTransaction } from 'wagmi';
 
-export default function Transaction({
-  writeArgs,
-  submitText,
-}) {
+export default function Transaction({writeArgs, submitText}) {
   const { address: account } = useAccount();
   const { chain } = useNetwork();
   const { switchNetwork } = useSwitchNetwork();
